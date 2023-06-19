@@ -60,7 +60,7 @@
 
 
   <!--GALERIA-->
-
+  {% load humanize %}
   <div class="container">
     <div class="row">
         {% for p in productos %}
@@ -72,7 +72,7 @@
                     <img src="{% static 'img/rayo.jpg' %}" class="card-img-top mx-auto">
                 {% endif %}
                 <div class="card-body">
-                    <h4 class="card-title"> {{ p.nombre }} - ${{p.precio}} </h4>
+                    <h4 class="card-title"> {{ p.nombre }} - ${{ p.precio|floatformat:0|intcomma:"." }} </h4>
                     <p class="card-text">
                          {{ p.marca }}<br>
                          {{ p.categoria }}
